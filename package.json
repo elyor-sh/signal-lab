@@ -1,0 +1,24 @@
+{
+  "name": "signal-lab",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "postinstall": "git rev-parse --git-dir >/dev/null 2>&1 && git config core.hooksPath .githooks || true",
+    "hooks:install": "git config core.hooksPath .githooks",
+    "prisma:generate": "pnpm --filter @signal-lab/backend prisma:generate",
+    "prisma:migrate": "pnpm --filter @signal-lab/backend prisma:migrate",
+    "prisma:seed": "pnpm --filter @signal-lab/backend prisma:seed"
+  },
+  "devDependencies": {
+    "prisma": "^6.2.1",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.2.1"
+  }
+}

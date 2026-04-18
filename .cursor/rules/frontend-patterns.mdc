@@ -1,0 +1,15 @@
+---
+description: Frontend conventions for Signal Lab
+globs:
+  - "apps/frontend/**/*"
+---
+
+# Frontend Patterns
+
+- Use App Router files under `src/app`.
+- Use TanStack Query for API reads and mutations.
+- Use React Hook Form for user input forms.
+- Use components from `src/components/ui` before creating new UI primitives.
+- Keep API calls in `src/lib/api.ts`.
+- Mutations that change scenario data must invalidate or refresh the `scenario-runs` query.
+- Loading, success, and error states must be visible in the UI.

@@ -1,0 +1,15 @@
+---
+description: Prisma and database conventions
+globs:
+  - "prisma/**/*"
+  - "apps/backend/src/**/*.ts"
+---
+
+# Prisma Patterns
+
+- Prisma schema lives at `prisma/schema.prisma`.
+- Prisma migrations live under `prisma/migrations`.
+- Backend code must access the database through `PrismaService`.
+- Do not use raw SQL for app behavior unless there is no Prisma equivalent and the reason is documented.
+- Every schema change needs a migration and generated client update.
+- Scenario runs are append-only audit records; do not delete them in normal app flows.

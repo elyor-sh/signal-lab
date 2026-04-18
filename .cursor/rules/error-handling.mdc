@@ -1,0 +1,13 @@
+---
+description: Backend and frontend error handling rules
+globs:
+  - "apps/**/*"
+---
+
+# Error Handling
+
+- Backend HTTP errors should use Nest exceptions and flow through the global exception filter.
+- Unexpected backend failures should be logged with structured context.
+- Frontend API helpers must throw useful `Error` instances for non-2xx responses.
+- Frontend mutations must show error toasts and refresh affected queries on settle.
+- Do not swallow errors silently in scenario execution or observability code.

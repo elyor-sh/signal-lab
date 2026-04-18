@@ -1,0 +1,13 @@
+node_modules
+.pnpm-store
+.next
+dist
+coverage
+.env
+.env.local
+.execution
+apps/backend/src/generated
+.idea
+*.log
+*.tsbuildinfo
+.DS_Store

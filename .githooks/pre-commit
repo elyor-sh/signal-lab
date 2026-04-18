@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+set -eu
+
+.cursor/hooks/scripts/check-prisma-change.sh
+.cursor/hooks/scripts/check-endpoint-observability.sh
+.cursor/hooks/scripts/check-secrets.sh

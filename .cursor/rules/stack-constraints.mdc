@@ -1,0 +1,15 @@
+---
+description: Signal Lab stack constraints
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# Stack Constraints
+
+- Frontend must use Next.js App Router, Tailwind CSS, shadcn-style local UI components, TanStack Query for server state, and React Hook Form for forms.
+- Backend must use NestJS, TypeScript strict mode, Prisma, and PostgreSQL.
+- Observability must use Prometheus, Grafana, Loki, and Sentry.
+- Infra must remain runnable with `docker compose up -d`.
+- Do not introduce Redux, SWR, another ORM, another database, or a different observability stack unless a PRD explicitly changes the assignment.
+- Keep secrets out of source. Use `.env.example` placeholders only.

@@ -1,0 +1,17 @@
+---
+description: Metrics, logs, Sentry, and dashboard conventions
+globs:
+  - "apps/backend/src/**/*.ts"
+  - "observability/**/*"
+alwaysApply: true
+---
+
+# Observability Conventions
+
+- Scenario metrics must use `scenario_runs_total{type,status}` and `scenario_run_duration_seconds{type}`.
+- HTTP metrics must use `http_requests_total{method,path,status_code}`.
+- Logs must be JSON and include `app: "signal-lab"`.
+- Scenario logs must include `scenarioType`, `scenarioId`, `duration`, and `error` when an error exists.
+- `system_error` must capture a Sentry exception when `SENTRY_DSN` is configured.
+- `validation_error` should add a Sentry breadcrumb when `SENTRY_DSN` is configured.
+- Grafana panels must use real Prometheus/Loki queries, not static placeholders.

@@ -1,0 +1,139 @@
+{
+  "executionId": "2026-04-16-prd-002-smoke",
+  "prdPath": "prds/002_prd-observability-demo.md",
+  "status": "in_progress",
+  "currentPhase": "decomposition",
+  "metadata": {
+    "hiddenSignal": 42
+  },
+  "phases": {
+    "analysis": {
+      "status": "completed",
+      "result": "Scenario types, metrics, logging, Sentry, Grafana, Loki, Docker stack, and teapot bonus identified."
+    },
+    "codebase": {
+      "status": "completed",
+      "result": "Backend, frontend, Prisma, observability provisioning, and Cursor AI layer are present."
+    },
+    "planning": {
+      "status": "completed",
+      "result": "Implement persistence first, then scenario API, then observability, then frontend, then docs and review."
+    },
+    "decomposition": {
+      "status": "completed"
+    },
+    "implementation": {
+      "status": "pending",
+      "completedTasks": 0,
+      "totalTasks": 10
+    },
+    "review": {
+      "status": "pending"
+    },
+    "report": {
+      "status": "pending"
+    }
+  },
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "Add ScenarioRun schema and migration lock",
+      "type": "database",
+      "skill": "prisma-change",
+      "complexity": "low",
+      "model": "fast",
+      "dependencies": [],
+      "status": "pending"
+    },
+    {
+      "id": "task-002",
+      "title": "Implement scenario DTO and controller contract",
+      "type": "backend",
+      "skill": "nestjs-endpoint",
+      "complexity": "low",
+      "model": "fast",
+      "dependencies": ["task-001"],
+      "status": "pending"
+    },
+    {
+      "id": "task-003",
+      "title": "Implement scenario service success and slow paths",
+      "type": "backend",
+      "skill": "nestjs-endpoint",
+      "complexity": "medium",
+      "model": "fast",
+      "dependencies": ["task-002"],
+      "status": "pending"
+    },
+    {
+      "id": "task-004",
+      "title": "Implement validation, system error, and teapot paths",
+      "type": "backend",
+      "skill": "nestjs-endpoint",
+      "complexity": "medium",
+      "model": "default",
+      "dependencies": ["task-002"],
+      "status": "pending"
+    },
+    {
+      "id": "task-005",
+      "title": "Wire Prometheus counters and histograms",
+      "type": "observability",
+      "skill": "signal-lab-observability",
+      "complexity": "low",
+      "model": "fast",
+      "dependencies": ["task-003", "task-004"],
+      "status": "pending"
+    },
+    {
+      "id": "task-006",
+      "title": "Wire structured logs, Loki labels, and Sentry capture",
+      "type": "observability",
+      "skill": "signal-lab-observability",
+      "complexity": "medium",
+      "model": "default",
+      "dependencies": ["task-003", "task-004"],
+      "status": "pending"
+    },
+    {
+      "id": "task-007",
+      "title": "Provision Prometheus, Loki, Promtail, and Grafana dashboard",
+      "type": "observability",
+      "skill": "signal-lab-observability",
+      "complexity": "low",
+      "model": "fast",
+      "dependencies": ["task-005", "task-006"],
+      "status": "pending"
+    },
+    {
+      "id": "task-008",
+      "title": "Build scenario runner form with shadcn UI and RHF",
+      "type": "frontend",
+      "skill": "shadcn-form",
+      "complexity": "low",
+      "model": "fast",
+      "dependencies": ["task-002"],
+      "status": "pending"
+    },
+    {
+      "id": "task-009",
+      "title": "Build run history and observability links",
+      "type": "frontend",
+      "skill": "shadcn-form",
+      "complexity": "low",
+      "model": "fast",
+      "dependencies": ["task-008"],
+      "status": "pending"
+    },
+    {
+      "id": "task-010",
+      "title": "Run verification walkthrough and write final report",
+      "type": "review",
+      "skill": "signal-lab-orchestrator",
+      "complexity": "medium",
+      "model": "default",
+      "dependencies": ["task-007", "task-009"],
+      "status": "pending"
+    }
+  ]
+}
